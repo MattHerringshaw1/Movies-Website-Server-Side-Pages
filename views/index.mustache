@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+
+    <h1>Movies</h1>
+
+    <h2>Add Movie</h2>
+    <form method="POST" action="movies/create">
+        <input type="text" placeHolder="Enter Movie Name" name="movieName" />
+        <input type="text" placeHolder="Enter Movie Description" name="movieDescription" />
+        <input type="text" placeHolder="Enter Movie Genre" name="movieGenre" />
+        <button>Add Movie</button>
+    </form>
+
+
+    <h2>Your Movies</h2>
+    <ul>
+        {{#allMovies}}
+            <form method="POST" action="movies/delete">
+                <input type="hidden" value = {{id}} name = "movieId" />
+                <li>{{title}}</li>
+                <li>{{description}}</li>
+                <li>{{genre}}</li>
+                <button>Delete Movie</button>
+            </form>
+        {{/allMovies}}
+    </ul>
+    
+    </body>
+</html>
+{{! 
+Ability to add a movie (title, description, genre, posterURL)
+Ability to view all movies
+Ability to delete a movie
+Ability to filter movies based on the genre }}
+

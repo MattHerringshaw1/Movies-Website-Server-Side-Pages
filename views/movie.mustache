@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+
+    <h1>Selected Movie</h1>
+
+    
+
+    <ul>
+        {{#oneMovie}}
+            <form method="POST" action="movies/:movieId">
+                <input type="hidden" value = {{id}} name = "movieId" />
+                <li>{{title}}</li>
+                <li>{{description}}</li>
+                <li>{{genre}}</li>
+            </form>
+        {{/oneMovie}}
+    </ul> 
+
+    <a href="/movies">Back</a>
+    
+    </body>
+</html>
